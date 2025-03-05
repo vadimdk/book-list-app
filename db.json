@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "To Kill a Mockingbird11",
+      "author": "Harper Lee",
+      "category": "Horror",
+      "isbn": "9780061120084",
+      "active": true,
+      "createdAt": "2023-01-15T08:35:00.000Z",
+      "modifiedAt": "2025-03-04T15:49:04.830Z"
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Science Fiction",
+      "isbn": "9780451524935",
+      "active": true,
+      "createdAt": "2023-02-20T14:22:00.000Z",
+      "modifiedAt": "2023-03-05T11:48:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Fiction",
+      "isbn": "9780743273565",
+      "active": true,
+      "createdAt": "2023-03-10T09:15:00.000Z",
+      "modifiedAt": "2025-03-05T10:58:52.860Z"
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Romance",
+      "isbn": "9780141439518",
+      "active": true,
+      "createdAt": "2023-04-05T10:45:00.000Z",
+      "modifiedAt": "2025-03-05T11:09:48.913Z"
+    },
+    {
+      "id": "5",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "category": "Fantasy",
+      "isbn": "9780547928227",
+      "active": false,
+      "createdAt": "2023-05-12T13:20:00.000Z",
+      "modifiedAt": "2025-03-05T11:09:40.732Z"
+    },
+    {
+      "id": "c653",
+      "title": "new book22",
+      "author": "jon duo",
+      "category": "History",
+      "isbn": "123456",
+      "active": true,
+      "createdAt": "2025-03-04T15:12:14.786Z",
+      "modifiedAt": "2025-03-04T15:48:31.827Z"
+    }
+  ]
+}
