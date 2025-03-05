@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { Layout } from '@/components/layout/layout';
+import { Layout } from '@/components/layout/Layout';
 import { Dashboard } from '@/pages/dashboard';
 import { AddBook } from '@/pages/add-book';
 import { EditBook } from '@/pages/edit-book';
