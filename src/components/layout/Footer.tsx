@@ -9,7 +9,7 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://gitlab.com/"
+            href="https://github.com/vadimdk/book-list-app.git"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-foreground/80"
