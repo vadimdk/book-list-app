@@ -8,7 +8,7 @@ Follow these steps to run the application locally:
 
    ```sh
    git clone https://github.com/vadimdk/book-list-app.git
-   cd book-list-tr-app
+   cd book-list-app
    ```
 
 2. **Install dependencies:**
