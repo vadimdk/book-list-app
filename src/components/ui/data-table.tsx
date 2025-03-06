@@ -80,7 +80,7 @@ export function DataTable() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="px-2 lg:px-1 space-y-4">
       <div className="flex flex-col gap-y-2 md:flex-row md:gap-4 justify-between items-center">
         <h2 className="text-2xl font-bold">Book List</h2>
         <div className="w-full md:w-[295px] flex flex-col md:flex-row items-center gap-4">
@@ -99,7 +99,7 @@ export function DataTable() {
         </div>
       </div>
 
-      <div className="text-sm text-muted-foreground">
+      <div className="text-center md:text-left text-sm text-muted-foreground">
         Showing {filteredBooks.length} of {books.length} books
       </div>
 

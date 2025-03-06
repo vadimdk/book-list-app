@@ -30,11 +30,8 @@ const categories = [
 export function BookForm() {
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log('id', id)
-  console.log('id111', 2)
-  const isEditMode = !!id;
-  console.log('isEditMode', isEditMode)
   
+  const isEditMode = !!id;
   const { books, addBook, updateBook } = useBookStore();
   
   const [formData, setFormData] = useState<BookFormData>({
@@ -43,17 +40,15 @@ export function BookForm() {
     category: '',
     isbn: ''
   });
-  console.log('formData', formData)
+  
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isEditMode && id && books.length) {
       const bookId = id;
-      console.log('bookId', bookId)
-      console.log('books', books)
       const book = books.find(book => book.id === bookId);
-      console.log('book', book)
+      
       if (book && books.length) {
         setFormData({
           title: book.title,
@@ -138,8 +133,8 @@ export function BookForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">
+    <div className="max-w-2xl px-2 md:px-0 mx-auto">
+      <h1 className="text-center md:text-left text-2xl font-bold mb-6">
         {isEditMode ? 'Edit Book' : 'Add a Book'}
       </h1>
       
@@ -208,7 +203,7 @@ export function BookForm() {
           )}
         </div>
         
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? 'Saving...' : isEditMode ? 'Edit Book' : 'Add a Book'}
           </Button>
