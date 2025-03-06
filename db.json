@@ -51,14 +51,14 @@
       "modifiedAt": "2025-03-05T11:09:40.732Z"
     },
     {
-      "id": "c653",
-      "title": "new book22",
+      "id": "6a35",
+      "title": "bbbbbbb",
       "author": "jon duo",
-      "category": "History",
-      "isbn": "123456",
+      "category": "Science Fiction",
+      "isbn": "131124154",
       "active": true,
-      "createdAt": "2025-03-04T15:12:14.786Z",
-      "modifiedAt": "2025-03-04T15:48:31.827Z"
+      "createdAt": "2025-03-06T09:35:02.982Z",
+      "modifiedAt": null
     }
   ]
 }

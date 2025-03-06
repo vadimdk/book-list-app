@@ -136,7 +136,7 @@ export function DataTable() {
                   <TableCell>{formatDate(book.createdAt)}</TableCell>
                   <TableCell>{formatDate(book.modifiedAt)}</TableCell>
                   <TableCell className="text-right">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex flex-col md:flex-row justify-end gap-2">
                       <Button
                         variant="outline"
                         size="icon"
