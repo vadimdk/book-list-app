@@ -83,7 +83,6 @@ export function DataTable() {
       <div className="flex flex-col gap-y-2 md:flex-row md:gap-4 justify-between items-center">
         <h2 className="text-2xl font-bold">Book List</h2>
         <div className="w-full md:w-[295px] flex flex-col md:flex-row items-center gap-4">
-
           <Select value={filterOption} onValueChange={handleFilterChange}>
             <SelectTrigger className="w-[97%] md:w-[180px]">
               <SelectValue placeholder="Filter books" />
@@ -94,7 +93,9 @@ export function DataTable() {
               <SelectItem value="deactivated">Show Deactivated</SelectItem>
             </SelectContent>
           </Select>
-          <Button className="w-[97%] md:w-24" onClick={() => navigate("/add")}>Add Book</Button>
+          <Button className="w-[97%] md:w-24" onClick={() => navigate("/add")}>
+            Add Book
+          </Button>
         </div>
       </div>
 
@@ -102,7 +103,7 @@ export function DataTable() {
         Showing {filteredBooks.length} of {books.length} books
       </div>
 
-      <div className="rounded-md border shadow-md">
+      <div className="hidden sm:flex rounded-md border shadow-md">
         <Table>
           <TableHeader>
             <TableRow>
@@ -128,12 +129,24 @@ export function DataTable() {
                   key={book.id}
                   className={!book.active ? "bg-muted/50" : ""}
                 >
-                  <TableCell className="font-medium">{book.title}</TableCell>
-                  <TableCell>{book.author}</TableCell>
-                  <TableCell>{book.category}</TableCell>
-                  <TableCell>{book.isbn}</TableCell>
-                  <TableCell>{formatDate(book.createdAt)}</TableCell>
-                  <TableCell>{formatDate(book.modifiedAt)}</TableCell>
+                  <TableCell className="font-medium truncate max-w-[100px] md:max-w-[110px] min-[1050px]:max-w-[150px]">
+                    {book.title}
+                  </TableCell>
+                  <TableCell className="truncate max-w-[100px] md:max-w-[110px] min-[1050px]:max-w-[150px]">
+                    {book.author}
+                  </TableCell>
+                  <TableCell className="truncate max-w-[100px] md:max-w-[110px]">
+                    {book.category}
+                  </TableCell>
+                  <TableCell className="truncate max-w-[100px] md:max-w-[110px] min-[1050px]:max-w-[150px]">
+                    {book.isbn}
+                  </TableCell>
+                  <TableCell className="">
+                    {formatDate(book.createdAt)}
+                  </TableCell>
+                  <TableCell className="">
+                    {formatDate(book.modifiedAt)}
+                  </TableCell>
                   <TableCell className="text-right">
                     <div className="flex flex-col md:flex-row justify-end gap-2">
                       <Button
@@ -171,6 +184,74 @@ export function DataTable() {
           </TableBody>
         </Table>
       </div>
+
+      {/* !!!mobile view!!! */}
+      <div className="flex sm:hidden rounded-md border shadow-md">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Title / Author</TableHead>
+              <TableHead className="text-right">Actions</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filteredBooks.length === 0 ? (
+              <TableRow>
+                <TableCell colSpan={7} className="text-center py-6">
+                  No books found
+                </TableCell>
+              </TableRow>
+            ) : (
+              filteredBooks.map((book) => (
+                <TableRow
+                  key={book.id}
+                  className={!book.active ? "bg-muted/50" : ""}
+                >
+                  <TableCell className="flex flex-col justify-end font-medium truncate max-w-[160px] min-[345px]:max-w-[200px] min-[505px]:max-w-[250px]">
+                    <dl>
+                      <dd className="truncate">{book.title}</dd>
+                      <dd className="font-normal truncate">{book.author}</dd>
+                    </dl>
+                  </TableCell>
+
+                  <TableCell className="text-right">
+                    <div className="flex md:flex-row justify-end gap-2">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => handleEdit(book.id)}
+                      >
+                        <Edit className="" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => handleToggleStatus(book.id)}
+                      >
+                        {book.active ? (
+                          <PowerOff className="h-4 w-4" />
+                        ) : (
+                          <Power className="h-4 w-4" />
+                        )}
+                      </Button>
+
+                      <Button
+                        variant="destructive"
+                        disabled={book.active}
+                        size="icon"
+                        onClick={() => handleDelete(book.id)}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
+          </TableBody>
+        </Table>
+      </div>
+      {/* !!!mobile view!!! */}
     </div>
   )
 }
