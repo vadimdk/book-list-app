@@ -38,7 +38,6 @@ export function DataTable() {
   }
 
   const handleEdit = (id: string) => {
-    console.log("Edit book with id:", id)
     navigate(`/edit/${id}`)
   }
 
