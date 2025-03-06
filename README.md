@@ -1,5 +1,3 @@
-
-
 # book-list-app
 
 ## Running the Application Locally
@@ -9,7 +7,7 @@ Follow these steps to run the application locally:
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-username/book-list-tr-app.git
+   git clone https://github.com/vadimdk/book-list-app.git
    cd book-list-tr-app
    ```
 
@@ -19,22 +17,30 @@ Follow these steps to run the application locally:
    npm install
    ```
 
-3. **Start the development server:**
+3. **Start the json-server:**
+
+   ```sh
+   npm run server
+   ```
+
+   link to json-server http://localhost:3001/books
+
+4. **Start the development server:**
 
    ```sh
    npm run dev
    ```
 
-4. **Open the application in your browser:**
+5. **Open the application in your browser:**
    Open your browser and navigate to `http://localhost:5173/`
 
-5. **Build the application for production:**
+6. **Build the application for production:**
 
    ```sh
    npm run build
    ```
 
-6. **Preview the production build:**
+7. **Preview the production build:**
    ```sh
    npm run preview
    ```
