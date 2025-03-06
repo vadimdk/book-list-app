@@ -103,7 +103,7 @@ export function DataTable() {
         Showing {filteredBooks.length} of {books.length} books
       </div>
 
-      <div className="rounded-md border">
+      <div className="rounded-md border shadow-md">
         <Table>
           <TableHeader>
             <TableRow>
